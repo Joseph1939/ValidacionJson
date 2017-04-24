@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>validacion json</title>
+     <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.css">
+    <script type="text/javascript" src="vendor/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <style>
+        .container{
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <form action="" method="post" id="formularioo" class="form-horizontal">
+         <input type="text" class="form-control" name="email" placeholder="ingrese el email">
+         <input type="submit" class="btn btn-primary" value="Enviar datos" id="btn">
+     </form>
+</div>
+</div>
+
+<script type="text/javascript"> 
+$(function(){
+    $("#btn").on("click",function(){
+        $("#formularioo").validate({
+            rules : {
+                email :{
+                    required : true,
+                    email :true,
+                    minlength :6,
+                    maxlength :30
+                }
+            },
+            message :{
+                email : {
+                    required : "el campo es requerido por ",
+                    email : "el formato no es de un correo ",
+                    minlength : "el min de caracteres es de 6",
+                    maxlength : "el max de caracteres es de 30"
+                }
+            }
+        });
+    });
+});
+</script>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    
+</body>
+</html>
